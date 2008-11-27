@@ -1,0 +1,29 @@
+Copyright Greg Weber  greg at gregweber.info
+License: GNU GPL
+
+contents:
+  README
+  todo_client.rb:
+    file to run, you probably want to alias it or change the name to something shorter
+  todo_server.rb:
+    run this in the background or use --local option with todo_client.rb
+    Running this in the background will give considerably faster performance,
+    and allow for use as a server with multiple clients across different computers
+
+instalation:
+  make sure you have ruby, including rubygems installed
+  gem install kirbybase
+
+optional instalation for --pdf and --html features
+  gem install ruport
+
+execution:
+  server mode:
+    todo_server.rb (run in the background)
+    todo_client.rb command [options]
+
+  local mode: (slower)
+    todo_client.rb --local
+
+
+todo_client.rb --help to see command options

@@ -1,0 +1,13 @@
+require 'tasks/helpers'
+
+desc "mirror to svn repository"
+task :mirror do
+  svn_dir = "/home/greg/src/todotxt/todo-ruby"
+  puts "copying to directory: #{svn_dir}"
+  out "cp -R * #{svn_dir}"
+
+  commit_msg = `git log | head -5 | tail -1`.chomp
+  Dir.chdir(svn_dir) do
+    out "svn commit -m '#{commit_msg}'"
+  end
+end
